@@ -7,9 +7,9 @@ class produto
     public $preco
 }
  function aumentarEstoque (int $valor) {
-     $this->$atualEstoque += $valor;
+     $this->$estoque += $valor;
     if(is_numeric($valor)){
-        echo "é numérico"
+        echo "não é numérico"
     }
     if ($valor > 0 && $valor < 500) {
     $atualEstoque += $valor;
@@ -20,9 +20,9 @@ class produto
 
 //diminuir estoque
 function diminuirEstoque (int $valor) {
-    $this->$atualEstoque -= $valor;
+    $this->$estoque -= $valor;
     if(is_numeric($valor)) {
-        echo "é numérico"
+        echo "não é numérico"
     }
     if ($valor > 0 && $valor < 200) {
         $atualEstoque -= $valor;
@@ -53,46 +53,6 @@ function reajustarPreco ($percentual)
     }
 }
 
-
-class produto
-{
-    public $profuto
-    public $estoque
-    public $preco
-}
-
-
-public function aumentarEstoque ($valor)
-{
-    $this->estoque += $valor;
-}
-
-
-public function diminuirEstoque ($valor)
-{
-    $this-> estoque -= $valor;
-}
-
-
-public function reajustarPreco ($percentual)
-{
-    $valorReajuste = $this->preco*($percentual/100)
-    $this->preco += ($percentual / 100);
-}
-
-
-// instanciando a classe produto
-$pc = new Produto();
-$pc->descricao = "celeron";
-$pc->estoque = 1;
-$pc->preco = 500;
-
-$pc->aumentarEstoque(10);
-$pc->diminuirEstoque(5);
-$pc->reajustarPreco(50);
-
-
-echo "temos $pc->descricao com apenas $pc->estoque restanto de unidade no valor de $pc->preco.";
 
 
 
